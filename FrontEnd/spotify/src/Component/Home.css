@@ -1,0 +1,72 @@
+#image{
+    height: 500px;
+}
+
+#home{
+    /* border : 1px solid red; */
+    height: 700px;
+    background-repeat: no-repeat;
+    background-image: url("../home.jpg");
+    background-size: cover;
+}
+#hoome{
+    height: 100%;
+}
+
+#footer{
+    /* border : 1px solid blue; */
+    background-color: black;
+    padding-bottom: 20px;
+}
+
+#block1{
+    display: grid;
+    grid-template-columns: repeat(6,1fr) ;
+    width: 90%;
+    margin: auto;
+    /* margin-top: 50px; */
+    background-color: black;
+}
+
+#block1 > div{
+    margin-top: 50px;
+}
+
+#block1 :nth-child(5){
+    grid-area: 1/5/2/7;
+}
+#block1 :nth-child(1){
+    display: flex;
+}
+
+.mario{
+    color : white;
+    margin-left: 10px;
+}
+
+#logoe{
+    margin-top: 10px ;
+}
+
+.marioo{
+    text-align: left;
+    color : white;
+    margin-left: 10px;
+}
+
+.logoes1{
+    display: flex;
+    /* border : 1px solid white; */
+    text-align: right;
+    justify-content: end;
+}
+
+.logoes1 > img{
+    margin: 5px;
+    /* border : 1px solid blue; */
+}
+
+h3:hover{
+    color : green;
+    
+}

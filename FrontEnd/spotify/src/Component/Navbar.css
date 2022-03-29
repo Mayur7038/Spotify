@@ -1,0 +1,44 @@
+
+#spot{
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    color: white;
+    
+}
+
+#logo{
+    /* border : 1px solid blue; */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#title{
+    color : white;
+    /* border : 1px solid green; */
+}
+
+#head{
+    display: flex;
+    margin-left: 80px;
+}
+
+#tags{
+    /* border : 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    margin-right: 70px;
+}
+
+h4{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.flow{
+    color : white;
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
