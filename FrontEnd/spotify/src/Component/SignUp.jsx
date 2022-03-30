@@ -1,14 +1,63 @@
 import logo from "../black.png"
 import "./SignUp.css"
 import ReCAPTCHA from "react-google-recaptcha";
-
+import axios from "axios";
+import { Link } from "react-router-dom";
 import { Input } from "../Tags/Input"
+import { useState } from "react";
 const handle = ()=>{
     console.log("")
 }
 
 
 export const SignUp = ()=>{
+
+    const [user , setUser ] = useState({
+        email : "",
+        password : "",
+        username : "",
+        gender : ""
+    })
+
+    const handleChange = (e)=>{
+
+       const  id = e.target.id || e.target.className ; 
+
+        const value = e.target.value;
+
+        setUser({
+            ...user,
+            [id] : value
+        })
+
+    }
+
+    const handleSubmit = ()=>{
+
+
+
+        axios.post("http://localhost:5000/user" , user).then(({data})=>{
+
+            if(data === false){
+                alert("user Already exist")
+            }
+            else if(data === "validation"){
+
+                alert("enter the valid data")
+                
+            }
+         
+            
+
+        }).catch((e)=>{
+            console.log(e);
+        })
+    }
+
+    const check=(e)=>{
+
+       
+    }
 
     return <>
 
@@ -18,39 +67,21 @@ export const SignUp = ()=>{
 
         <div id="content" >
                 <h5> What's your email? </h5>
-                <Input type="text" placeholder="Enter your email." />
+                <Input type="text" id="email" onChange={(e)=> handleChange(e)} placeholder="Enter your email." />
                 <h5>Confirm your email</h5>
-                <Input type="text" placeholder="Enter your email again." />
+                <Input type="text"  placeholder="Enter your email again." />
                 <h5>Create password  </h5>
-                <Input type="text" placeholder="Create a password." />
+                <Input type="text" id="password" onChange={(e)=> handleChange(e)} placeholder="Create a password." />
                 <h5> What should we call you? </h5>
-                <Input type="text" placeholder="Enter a profile name." />
-                <h5> What's your date of birth? </h5>
-                <table>
-                    <thead>
-                        <tr> 
-                            <td> Year </td>
-                            <td> Month </td>
-                            <td> Day </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td > <input className="birth1" type="text" placeholder="YYYY" /> </td>
-                            <td > <input className="birth2" type="text" placeholder="Month" /> </td>
-                            <td > <input className="birth3" type="text" placeholder="DD" /> </td>
-                        </tr>
-                    </tbody>
-
-                </table>
-
+                <Input type="text" id="username" onChange={(e)=> handleChange(e)} placeholder="Enter a profile name." />
+              
                 <h5>  What's your gender?</h5>
 
                 <div id="gender">
 
-                   <div className="ingender" > <input type="radio" />  <p> Male</p> </div>  
-                    <div className="ingender" >  <input type="radio" /> <p> Female </p> </div>  
-                    <div className="ingender"> <input type="radio" />  <p> Non-binary </p> </div> 
+                   <div className="ingender"   > <input className="gender" type="radio" name="gender" onChange={(e)=> handleChange(e)} value="male" />  <p> Male</p> </div>  
+                    <div className="ingender" >  <input className="gender" type="radio" name="gender" onChange={(e)=> handleChange(e)} value="female" /> <p> Female </p> </div>  
+                    <div className="ingender"> <input className="gender" type="radio" name="gender" onChange={(e)=> handleChange(e)} value="non-binary" />  <p> Non-binary </p> </div> 
                 </div>
 
                 <br />
@@ -73,9 +104,9 @@ export const SignUp = ()=>{
                 <p className="bottom"> By clicking on sign-up, you agree to Spotify's <a href=""> Terms and Conditions of use. </a> </p>
 
                 <p className="bottom"> To learn more about how Spotify collects, uses , shares and protects your personal data , please see <a href=""> Spotiy's Privacy Policy . </a> </p>
-                <div id="button"> <button id="signUp" > Sign Up </button> </div>
+                <div id="button"> <button id="signUp" onClick={()=> handleSubmit()} > Sign Up </button> </div>
                 
-                <div id="have"> <p> Have an account ?  <a href=""> Log in. </a>  </p>  </div> 
+                <div id="have"> <p> Have an account ?  <Link to="/login" > Log In </Link>  </p>  </div> 
 
 
 

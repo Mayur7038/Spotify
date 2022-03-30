@@ -1,9 +1,46 @@
+import axios from "axios"
+import { useState } from "react"
 import logo from "../black.png"
 import { Input } from "../Tags/Input"
 import "./login.css"
+import { Link } from "react-router-dom"
 
 
 export const Login = ()=>{
+
+    const [user , setUser ] = useState({
+        email : "",
+        password : ""
+
+    })
+
+    const handleChange=(e)=>{
+
+        const {id , value} = e.target;
+
+        setUser({
+            ...user ,
+            [id]  : value
+        })
+
+    }
+
+    const handleSubmit = ()=>{
+
+
+        axios.post("http://localhost:5000/user/login" , user).then(({data})=>{
+
+            alert( "welcome " + data);
+
+        }).catch(()=>{
+            console.log("enter the valid detail")
+        })
+
+    }
+
+
+
+    
     
     return <div >
 
@@ -11,40 +48,25 @@ export const Login = ()=>{
 
         <hr />
 
-
-
-
         <div id="container">
-
-
 
             <div>
 
-                {/* <div>
-                    <div> <hr /> </div>
-                    <div> OR </div>
-                    <div> <hr /> </div>
-                </div> */}
-
                 <h5> Email address or username </h5>
-                <Input/>
+                <Input id="email" onChange={(e)=> handleChange(e)} />
                 <h5> Password </h5>
 
-                <Input/>
+                <Input id="password" onChange={(e)=> handleChange(e) } />
                 <br />
 
                 <p> Forgot your password? </p>
 
                 <div id="both">
-
-
                     <div id="check" > 
 
-                    <input type="checkbox" />  <p> Remeber me </p>
-                    
+                    <input type="checkbox"  />  <p> Remeber me </p>
                     </div> 
-
-                    <button>  Log In </button>
+                    <button  onClick={()=> handleSubmit() } >  Log In </button>
 
                 </div>
 
@@ -56,7 +78,9 @@ export const Login = ()=>{
 
             <div id="end">
                 <h3> Don't have an account? </h3>
-                <button id="signup">  SIGN UP FOR SPOTIFY </button>
+
+                <Link to="/signUp" > <button id="signup">  SIGN UP FOR SPOTIFY </button>  </Link>
+                
             </div>
 
 
