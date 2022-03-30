@@ -7,11 +7,10 @@ const handle = ()=>{
     console.log("")
 }
 
+
 export const SignUp = ()=>{
 
     return <>
-
-        
 
        <div id="loger" > <img src={logo} alt="" /> <span> Spotify </span> </div>
 
