@@ -70,3 +70,16 @@ h3:hover{
     color : green;
     
 }
+
+#getStarted{
+    background-color: #FEFEFF;
+    border: none;
+    position: relative;
+    top: 50%;
+    width: 200px;
+}
+
+#getStarted:hover {
+    width: 250px;
+    height: 55px;
+}

@@ -4,10 +4,13 @@ import logo from "../spotify-16.png"
 import twit from "../twit.png"
 import insta from "../instagram.png"
 import fac from "../face.png"
+import { Link } from "react-router-dom"
 export const Home = ()=>{
     return <>
 
-        <div id="home"> <img id="hoome" src={home} alt="" /> </div>
+        
+        <div id="home">  <Link to="/station" >   <button id="getStarted" > Get Started </button>  </Link> </div>
+
 
         <div id="footer">
 
