@@ -2,6 +2,7 @@ img{
     height:  40px;
 }
 
+
 span{
     font-size: 20px;
     margin-top: auto;
@@ -78,4 +79,10 @@ span{
 
 hr{
     border : 1px solid rgb(231, 228, 228);
+}
+#mainerer{
+    background-color: white;
+    border: 1px solid transparent;
+    height: 500%;
+    border: 1px solid transparent;
 }

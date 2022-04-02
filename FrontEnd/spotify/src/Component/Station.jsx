@@ -1,25 +1,17 @@
 import { useEffect, useState , Component, useRef } from "react";
 import "./Station.css";
-import demo from "./Station/1.mp3"
-import cover from "./Station/cover1.jpg"
-import playing from "./Station/playing.gif"
 import axios from "axios";
 import {Input} from "../Tags/Input"
-
-
-function update(){
-  console.log("update");
-  
-}
-
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import AudioPlayer from 'material-ui-audio-player';
 
 
 export const Station = () => {
 
-  const [play , setPlay ] = useState(false);
   const [lists , setLists] = useState([]);
 
   const [search , setSearch] = useState([]);
+
 
   useEffect(()=>{
     axios.get("https://apg-saavn-api.herokuapp.com/playlist/?q=https://www.jiosaavn.com/featured/romantic-hits-2020---hindi/ABiMGqjovSFuOxiEGmm6lQ").then(({data})=>{
@@ -49,10 +41,18 @@ export const Station = () => {
 
       })
 
-    },1000)
+    },500)
+  }
 
+  const [src , setSrc ] = useState("https://aac.saavncdn.com/430/5c5ea5cc00e3bff45616013226f376fe_320.mp4");
+  const [bg , setbg ] = useState("https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg")
+
+  const handleClick =(link,img)=>{
+    console.log(img)
+
+    setSrc(link);
+    setbg(img);
     
-
   }
 
  
@@ -61,35 +61,20 @@ export const Station = () => {
 
   return (
     <>
-      <div>
+      <div id="main" style={{ backgroundImage : `url(${bg})` } }>
 
 
-        <div className="container">
+        <div className="container"  >
 
-          <div className="songList">
-          <div className="songItemContainer">
-            {
-              lists.map((e)=>{
-                return <div className="songItem" key={e.id} >
-
-                        <img src={e.image} />
-                        <span> {e.song} </span> 
-                        <span className="songlistPlay"> <span className="timestamp"> {e.duration} <i className="far  fa-play-circle" aria-hidden="true"></i> </span> </span>
-                </div>
-              })
-            } 
-          </div>
-
-          </div>
 
           <div id="searchBar" >
 
-            <Input onChange={(e)=> handleInput(e)} />
+            <Input id="search" onChange={(e)=> handleInput(e)}  placeholder="Enter the song Name" />
 
             {
 
                 search.map((e)=>{
-                return <div className="searchLists" key={e.id} >
+                return <div className="searchLists"  onClick={()=> handleClick(e.media_url,e.image) } key={e.id}  >
                         <img src={e.image} />
                         <span> {e.song} </span> 
                 </div>
@@ -101,22 +86,19 @@ export const Station = () => {
           </div>
 
         </div>
-        <div className="bottom">
-          <input onTimeUpdate={()=> update()} type="range" min="0" max="100" id="myProgressBar" />
-
-          <div className="icons">
-          <i className="fa fa-2x fa-step-backward" aria-hidden="true"></i>
-
-          { play===true ?  <i className="fa fa-2x fa-pause"    aria-hidden="true"></i>  : <i className="fa fa-2x fa-play-circle-o"   aria-hidden="true"></i> }
-         
-          
-          <i className="fa  fa-2x fa-step-forward" aria-hidden="true"></i>
-          </div>
-          <div className="songInfo">
-            {/* <img src={playing} alt="" /> Kalank */}
-            
-
-          </div>
+        <div className="bottom1">
+              <ThemeProvider>
+                  <AudioPlayer
+                    elevation={1}
+                    width="100%"
+                    variation="default"
+                    spacing={3}
+                    order="standart"
+                    autoplay={false}
+                    preload="auto"
+                    src={src}
+                  />
+            </ThemeProvider>;
         </div>
       </div>
 

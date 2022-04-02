@@ -106,3 +106,8 @@ a{
     margin: auto;
     margin-top: 10px;
 }
+
+#mainer{
+    background-color: white;
+    border : 1px solid transparent;
+}

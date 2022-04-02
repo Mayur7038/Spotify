@@ -5,11 +5,14 @@ import twit from "../twit.png"
 import insta from "../instagram.png"
 import fac from "../face.png"
 import { Link } from "react-router-dom"
+import { Navbar } from "./Navbar"
 export const Home = ()=>{
     return <>
 
+         <Navbar/>
+
         
-        <div id="home">  <Link to="/station" >   <button id="getStarted" > Get Started </button>  </Link> </div>
+        <div id="home">  <Link to="/sidebar" >   <button id="getStarted" > Get Started </button>  </Link> </div>
 
 
         <div id="footer">

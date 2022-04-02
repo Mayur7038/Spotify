@@ -1,18 +1,23 @@
 .container{
-    min-height: 60vh;
-    background-color: black;
     color: white;  
     font-family: 'Varela Round' , sans-serif ;
-    border : 1px solid  salmon;
     display: flex;
-    margin: 23px auto;
-    width: 80%;
-    border-radius: 12px;
     padding: 34px;
-    background-image: url("./Station/bg.png");
     justify-content: space-between;
     gap: 20px;
+    width: 60vw;
+    margin-left: 20px;
+}
 
+#main{
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: rgb(46, 46, 46);
+    height: auto;
+    margin-left: 200px;
+    height: 50vw;
 }
 .songItemContainer{
 
@@ -20,23 +25,26 @@
 
 }
 
-.bottom{
-    position: sticky;  
-    height: 90px;
+#search{
+    background-color: rgba(0, 0, 0, .5); 
+    color : white;
+}
+
+*{
+    font-family: 'Varela Round' , sans-serif ;
+}
+
+.bottom1{
+    position: fixed;  
     bottom: 0px;
-    background-color: black;
-    color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    padding-left: 12px;
 }
-.icons{
-    margin-top: 15px;
-}
-.icons > i{
-    cursor: pointer;
-}
+
+
+
 
 #myProgressBar{
     width: 80vw;
@@ -46,17 +54,17 @@
     height: 50px;
     display: flex;
     background-color: white;
+    opacity: 0.7;
     color : black;
-    /* width: 80%; */
-    margin: 12px 0;
+    margin: 12px 5px;
     justify-content: space-between;
     align-items: center;
+    padding-right: 15px;
     border-radius: 34px;
 }
 
 .songItem img{
 
-    /* width: 23px; */
     height: 50px;
     margin: 0 23px;
     border-radius: 34px;
@@ -85,15 +93,48 @@
 
 .searchLists{
     background-color: white;
+    opacity: 0.8;
     color: black;
     margin: 5px;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
     padding: 0 20px;
+    max-width:400px ;
 }
+
 .searchLists img{
     border-radius: 10px;
     margin-left: 15px;
     
 }
+
+
+@media only screen and (min-width : 375px) and (max-width:786px ){
+
+    .container{
+        display: grid;
+
+    }
+
+    .songList{
+        display: none;
+    }
+    #main{
+        height: 90vw;
+        background-color: rgb(46, 46, 46);
+        /* border : 1px solid red; */
+        margin-left: 100px;
+    }
+    #search{
+        max-width: 70%;
+    }
+
+    .bottom1{
+        width: 70%;
+        text-align: center;
+        padding-left: 20px;
+        /* border : 1px solid red; */
+    }
+}
+

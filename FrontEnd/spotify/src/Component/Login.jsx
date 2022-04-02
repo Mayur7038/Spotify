@@ -4,6 +4,7 @@ import logo from "../black.png"
 import { Input } from "../Tags/Input"
 import "./login.css"
 import { Link } from "react-router-dom"
+import { Navbar } from "./Navbar"
 
 
 export const Login = ()=>{
@@ -42,7 +43,9 @@ export const Login = ()=>{
 
     
     
-    return <div >
+    return <div id="mainerer">
+
+
 
         <div id="loger" > <img src={logo} alt="" /> <span> Spotify </span> </div>
 

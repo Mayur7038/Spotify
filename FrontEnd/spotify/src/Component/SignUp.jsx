@@ -59,7 +59,7 @@ export const SignUp = ()=>{
        
     }
 
-    return <>
+    return <div id="mainer">
 
        <div id="loger" > <img src={logo} alt="" /> <span> Spotify </span> </div>
 
@@ -113,6 +113,6 @@ export const SignUp = ()=>{
 
         </div>
     
-    </>
+    </div>
 
 }

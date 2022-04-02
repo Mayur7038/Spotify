@@ -1,0 +1,21 @@
+#sidebar{
+    z-index: 2;
+    position:fixed ;
+    height: 100vh;
+    text-align: left;
+    padding: 20px;
+    width: 10vw;
+    color: white;
+    /* border : 1px solid red; */
+    background-color: black;
+}
+
+h3:hover{
+
+    color : grey
+
+}
+
+#side{
+    display: flex;
+}
