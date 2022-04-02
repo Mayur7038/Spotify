@@ -37,11 +37,11 @@ export const Station = () => {
 
     setSrc(link);
     setbg(img);
-    
+    setPlayer(true);
   }
 
+  const [playerer , setPlayer] = useState(false)
  
-
 
 
   return (
@@ -79,7 +79,7 @@ export const Station = () => {
                     variation="default"
                     spacing={3}
                     order="standart"
-                    autoplay={false}
+                    autoplay={playerer}
                     preload="auto"
                     src={src}
                   />

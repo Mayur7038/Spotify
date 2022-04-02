@@ -87,25 +87,6 @@ export const SignUp = ()=>{
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        <div id="loger" > <img src={logo} alt="" /> <span> Spotify </span> </div>
 
         <h1> Sign up for free to start listening. </h1>
