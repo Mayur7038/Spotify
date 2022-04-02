@@ -4,7 +4,6 @@ import logo from "../black.png"
 import { Input } from "../Tags/Input"
 import "./login.css"
 import { Link } from "react-router-dom"
-import { Navbar } from "./Navbar"
 
 
 export const Login = ()=>{
@@ -47,11 +46,18 @@ export const Login = ()=>{
 
 
 
-        <div id="loger" > <img src={logo} alt="" /> <span> Spotify </span> </div>
+        <div id="loger" > <img id="img" src={logo} alt="" /> <span id="titla"> Spotify </span> </div>
 
         <hr />
 
+        <div id="logFacebook"> <p> CONTINUE WITH FACEBOOK </p> </div>
+        <div id="logApple"> <p> CONTINUE WITH APPLE </p> </div>
+
+
+                  
+
         <div id="container">
+         <p style={{display : "flex" , gap : "5px" }}> <p style={{ backgroundColor : "#E7E4E4" , width : "45%" , height : "2px"}}> </p> <p style={{ marginTop : "auto" , marginBottom : "auto" }} > OR </p>   <p style={{ backgroundColor : "#E7E4E4" , width : "45%" , height : "2px"}}> </p></p>
 
             <div>
 

@@ -66,8 +66,8 @@
     /* border : 1px solid blue; */
 }
 
-h3:hover{
-    color : green;
+.hover:hover{
+    color : #23C85C;
     
 }
 

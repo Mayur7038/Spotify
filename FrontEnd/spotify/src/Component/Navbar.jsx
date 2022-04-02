@@ -17,12 +17,12 @@ export const Navbar = ()=>{
             </Link>
             <div id="tags">
 
-                <h4> Premium </h4>
-                <h4> Support </h4>
-                <h4> Download </h4>
-                <h4> | </h4>
-              <Link className="flow" to="/signUp"> <h4> Sign up </h4>  </Link>   
-              <Link className="flow" to="/login" >   <h4> Log in </h4>    </Link>  
+                <h4 className="hover">  Premium </h4>
+                <h4 className="hover"> Support </h4>
+                <h4 className="hover">   Download </h4>
+                <h4 className="hover"> | </h4>
+              <Link className="flow hover" to="/signUp"> <h4> Sign up </h4>  </Link>   
+              <Link className="flow hover" to="/login" >   <h4> Log in </h4>    </Link>  
 
             </div>
 

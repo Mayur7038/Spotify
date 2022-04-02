@@ -1,10 +1,40 @@
-img{
-    height:  40px;
+#img{
+    height:  50px;
+}
+
+
+#titla{
+    font-size: 40px;
+    font-weight: bolder;
+    
+}
+
+#logFacebook{
+    border : 1px solid transparent;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #3A5898;
+    color : rgb(236, 235, 235);
+    margin: auto;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+#logApple{
+    border : 1px solid transparent;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #181819;
+    color : rgb(236, 235, 235);
+    margin: auto;
+    font-weight: bolder;
 }
 
 
 span{
-    font-size: 20px;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 15px;

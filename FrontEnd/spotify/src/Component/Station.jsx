@@ -25,10 +25,6 @@ export const Station = () => {
 
   const handleInput=(e)=>{
 
-    if(e.target.value.length < 3){
-      return;
-    }
-
     if(id){
       clearTimeout(id);
     }

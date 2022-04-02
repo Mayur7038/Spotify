@@ -1,4 +1,3 @@
-import home from "../home.jpg"
 import "./Home.css"
 import logo from "../spotify-16.png"
 import twit from "../twit.png"
@@ -24,25 +23,25 @@ export const Home = ()=>{
                 </div>
                 <div className="marioo" >
 
-                    <h3> About </h3>
-                    <h3> Company </h3>
-                    <h3> Jobs </h3>
-                    <h3> For the Record </h3>
+                    <h3 className="hover"> About </h3>
+                    <h3 className="hover"> Company </h3>
+                    <h3 className="hover"> Jobs </h3>
+                    <h3 className="hover"> For the Record </h3>
                     
                 </div>
                 <div className="marioo">  
-                    <h3> COMMUNITIES </h3>
-                    <h3> For Artists </h3>
-                    <h3> Developers </h3>
-                    <h3> Advertising </h3>
-                    <h3> Investors  </h3>
-                    <h3>Vendors </h3>
+                    <h3 className="hover"> COMMUNITIES </h3>
+                    <h3 className="hover"> For Artists </h3>
+                    <h3 className="hover"> Developers </h3>
+                    <h3 className="hover"> Advertising </h3>
+                    <h3 className="hover"> Investors  </h3>
+                    <h3 className="hover">Vendors </h3>
                 </div>
                 <div className="marioo">
-                    <h3> USEFUL LINKS </h3>
-                    <h3> Support </h3>
-                    <h3> Web Player </h3>
-                    <h3> Free Mobile App </h3>
+                    <h3 className="hover"> USEFUL LINKS </h3>
+                    <h3 className="hover"> Support </h3>
+                    <h3 className="hover"> Web Player </h3>
+                    <h3 className=""> Free Mobile App </h3>
                 </div>
                 <div className="logoes"> 
 
