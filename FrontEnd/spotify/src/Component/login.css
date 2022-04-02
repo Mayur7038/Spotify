@@ -116,3 +116,56 @@ hr{
     height: 500%;
     border: 1px solid transparent;
 }
+
+
+#logINFailed{
+    background-color: white;
+    position: fixed;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+    top: 30%;
+    left: 48%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+
+#ok{
+    background-color: white;
+    
+    color : #2285D8;
+    /* border : 1px solid red; */
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#ok:hover{
+    cursor: pointer;
+}
+
+#message{
+    height: 100px;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

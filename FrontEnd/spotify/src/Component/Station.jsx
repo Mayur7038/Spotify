@@ -1,27 +1,17 @@
-import { useEffect, useState , Component, useRef } from "react";
+import { useState} from "react";
 import "./Station.css";
 import axios from "axios";
 import {Input} from "../Tags/Input"
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 
 
 export const Station = () => {
 
-  const [lists , setLists] = useState([]);
 
   const [search , setSearch] = useState([]);
 
-
-  useEffect(()=>{
-    axios.get("https://apg-saavn-api.herokuapp.com/playlist/?q=https://www.jiosaavn.com/featured/romantic-hits-2020---hindi/ABiMGqjovSFuOxiEGmm6lQ").then(({data})=>{
-
-      setLists(data.songs)
-    })
-  },[])
-
   let id;
-
 
   const handleInput=(e)=>{
 
@@ -44,7 +34,6 @@ export const Station = () => {
   const [bg , setbg ] = useState("https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg")
 
   const handleClick =(link,img)=>{
-    console.log(img)
 
     setSrc(link);
     setbg(img);
@@ -71,7 +60,7 @@ export const Station = () => {
 
                 search.map((e)=>{
                 return <div className="searchLists"  onClick={()=> handleClick(e.media_url,e.image) } key={e.id}  >
-                        <img src={e.image} />
+                        <img src={e.image} alt="not found" />
                         <span> {e.song} </span> 
                 </div>
               })

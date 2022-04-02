@@ -5,12 +5,17 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Input } from "../Tags/Input"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+
 const handle = ()=>{
     console.log("")
 }
 
 
 export const SignUp = ()=>{
+
+    
 
     const [user , setUser ] = useState({
         email : "",
@@ -32,25 +37,32 @@ export const SignUp = ()=>{
 
     }
 
+
+    const [text ,setText] = useState("")
+
+
+    const navigate = useNavigate();
+
     const handleSubmit = ()=>{
 
 
 
         axios.post("http://localhost:5000/user" , user).then(({data})=>{
 
-            if(data === false){
-                alert("user Already exist")
-            }
-            else if(data === "validation"){
+            if(data === true){
 
-                alert("enter the valid data")
-                
+                navigate("/login")
             }
-         
-            
+            else{
+                setText(data)
+                setStatus(false)
+
+            }
+
 
         }).catch((e)=>{
-            console.log(e);
+            setText("Please Fill All the details ");
+            setStatus(false)
         })
     }
 
@@ -59,7 +71,40 @@ export const SignUp = ()=>{
        
     }
 
+
+    const [status , setStatus] = useState(true); // if there is a error the false 
     return <div id="mainer">
+
+
+
+
+        {/* div to handle SignUp error */}
+        <div id="signUpFailed" style={{  display :  status ? "none"  : "block"      }}   >
+            <h3 id="message">  {text} </h3>
+                 <hr />
+            <h3 id="ok"  onClick={()=> setStatus(true)  }   > OK </h3>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        <div id="loger" > <img src={logo} alt="" /> <span> Spotify </span> </div>
 

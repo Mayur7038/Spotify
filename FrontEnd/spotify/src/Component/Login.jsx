@@ -4,7 +4,7 @@ import logo from "../black.png"
 import { Input } from "../Tags/Input"
 import "./login.css"
 import { Link } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom"
 
 export const Login = ()=>{
 
@@ -25,24 +25,48 @@ export const Login = ()=>{
 
     }
 
+
+    const navigate = useNavigate();
+
     const handleSubmit = ()=>{
 
 
         axios.post("http://localhost:5000/user/login" , user).then(({data})=>{
 
-            alert( "welcome " + data);
+
+            if(data===true){
+                navigate("/sidebar");
+            }
+            else{
+                setStatus(false)
+            }
+
+            
 
         }).catch(()=>{
-            console.log("enter the valid detail")
+            setStatus(false)
         })
+
+        // navigate("/sidebar")
 
     }
 
 
+    const [status , setStatus] = useState(true); // if there is a error the false 
 
-    
-    
     return <div id="mainerer">
+
+
+        <div id="logINFailed"  style={{  display :  status ? "none"  : "block"      }} >
+
+            <h3 id="message"> Invalid Email-ID or Password </h3>
+            <hr />
+            <h3 id="ok"  onClick={()=> setStatus(true)  }   > OK </h3>
+
+        </div>
+
+
+
 
 
 
@@ -57,11 +81,11 @@ export const Login = ()=>{
                   
 
         <div id="container">
-         <p style={{display : "flex" , gap : "5px" }}> <p style={{ backgroundColor : "#E7E4E4" , width : "45%" , height : "2px"}}> </p> <p style={{ marginTop : "auto" , marginBottom : "auto" }} > OR </p>   <p style={{ backgroundColor : "#E7E4E4" , width : "45%" , height : "2px"}}> </p></p>
+         <div style={{display : "flex" , gap : "5px" }}> <p style={{ backgroundColor : "#E7E4E4" , width : "45%" , height : "2px"}}> </p> <p style={{ marginTop : "auto" , marginBottom : "auto" }} > OR </p>   <p style={{ backgroundColor : "#E7E4E4" , width : "45%" , height : "2px"}}> </p></div>
 
             <div>
 
-                <h5> Email address or username </h5>
+                <h5> Email address  </h5>
                 <Input id="email" onChange={(e)=> handleChange(e)} />
                 <h5> Password </h5>
 
