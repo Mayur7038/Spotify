@@ -97,7 +97,7 @@ export const SignUp = ()=>{
                 <h5>Confirm your email</h5>
                 <Input type="text"  placeholder="Enter your email again." />
                 <h5>Create password  </h5>
-                <Input type="text" id="password" onChange={(e)=> handleChange(e)} placeholder="Create a password." />
+                <Input type="password" id="password" onChange={(e)=> handleChange(e)} placeholder="Create a password." />
                 <h5> What should we call you? </h5>
                 <Input type="text" id="username" onChange={(e)=> handleChange(e)} placeholder="Enter a profile name." />
               

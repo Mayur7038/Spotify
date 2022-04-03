@@ -89,7 +89,7 @@ export const Login = ()=>{
                 <Input id="email" onChange={(e)=> handleChange(e)} />
                 <h5> Password </h5>
 
-                <Input id="password" onChange={(e)=> handleChange(e) } />
+                <Input id="password" type="password" onChange={(e)=> handleChange(e) } />
                 <br />
 
                 <p> Forgot your password? </p>
