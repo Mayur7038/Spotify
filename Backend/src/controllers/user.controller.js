@@ -22,7 +22,7 @@ router.post("/login" , async (req,res)=>{
         
     }
     catch(e){
-        res.send(e.message);
+        return res.send({message : e.message});
     }
 })
 
@@ -67,7 +67,7 @@ router.post("" ,
     }
     catch(e){
         
-        res.send("Enter the Valid Data");
+        return res.status(500).send({message : e.message});
     }
 
 } )
@@ -78,13 +78,12 @@ router.get("" , async(req,res)=>{
 
         const user = await User.find().lean().exec();
 
-
         return res.status(201).send(user);
 
 
     }
     catch(e){
-        console.log(e);
+        return res.status(500).send({message : e.message});
     }
 
 })

@@ -47,7 +47,7 @@ export const SignUp = ()=>{
 
 
 
-        axios.post("http://localhost:5000/user" , user).then(({data})=>{
+        axios.post("https://spotifymayur.herokuapp.com/user" , user).then(({data})=>{
 
             if(data === true){
 
