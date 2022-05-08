@@ -2,11 +2,11 @@ import { useState} from "react";
 import "./Station.css";
 import axios from "axios";
 import {Input} from "../Tags/Input"
-import { ThemeProvider } from '@material-ui/core';
+import { ThemeProvider , createMuiTheme } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 
-
 export const Station = () => {
+  const muiTheme = createMuiTheme({});
 
 
   const [search , setSearch] = useState([]);
@@ -72,7 +72,7 @@ export const Station = () => {
 
         </div>
         <div className="bottom1">
-              <ThemeProvider>
+              <ThemeProvider  theme={muiTheme}>
                   <AudioPlayer
                     elevation={1}
                     width="100%"

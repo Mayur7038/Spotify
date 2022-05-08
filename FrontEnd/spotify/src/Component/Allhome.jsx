@@ -1,9 +1,10 @@
 import { useEffect, useState , } from "react";
 import axios from "axios";
 
-import {  ThemeProvider } from '@material-ui/core';
+import {  ThemeProvider , createMuiTheme } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 import "./Allhome.css"
+const muiTheme = createMuiTheme({});
 
 
 export const Allhome =()=>{
@@ -55,7 +56,7 @@ export const Allhome =()=>{
             }
 
         <div id="boott">
-         <ThemeProvider>
+         <ThemeProvider theme={muiTheme}>
                   <AudioPlayer
                     elevation={1}
                     width="100%"
