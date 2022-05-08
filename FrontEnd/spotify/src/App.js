@@ -1,5 +1,4 @@
 import "./App.css";
-import {Navbar} from "./Component/Navbar"
 import {Router} from "./Component/Router"
 
 
@@ -8,7 +7,6 @@ function App() {
     <div className="App">
 
 
-      {/* <Navbar/> */}
       
       
       <Router/>

@@ -1,7 +1,7 @@
 import { useEffect, useState , } from "react";
 import axios from "axios";
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import {  ThemeProvider } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 import "./Allhome.css"
 
@@ -42,7 +42,7 @@ export const Allhome =()=>{
 
                     return <div onClick={()=>  handleClick(e.media_url,)}>
 
-                        <img src={e.image} />
+                        <img src={e.image} alt={"Cover page"} />
                         <h6> {e.lyrics_snippet} </h6>
                     </div>
 

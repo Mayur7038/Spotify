@@ -66,11 +66,7 @@ export const SignUp = ()=>{
         })
     }
 
-    const check=(e)=>{
-
-       
-    }
-
+   
 
     const [status , setStatus] = useState(true); // if there is a error the false 
     return <div id="mainer">
