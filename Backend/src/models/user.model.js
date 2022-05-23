@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
 })
 
 userSchema.pre("save" , function (next){
-    if(! this.isModified("password")) return next;
+    if(! this.isModified("password")) return next();
 
     var hash = bcrypt.hashSync(this.password, 8);
     this.password = hash;
@@ -22,7 +22,9 @@ userSchema.pre("save" , function (next){
 })
 
 userSchema.methods.checkPassword = function (password){
-    return bcrypt.compareSync(password , this.password);
+
+    return bcrypt.compareSync(password , this.password); // true
+
 }
 
 module.exports = mongoose.model("user" , userSchema);

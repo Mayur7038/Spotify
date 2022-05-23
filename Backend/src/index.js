@@ -3,11 +3,9 @@ const cors = require("cors");
 const connect = require("./config/db");
 const app = express();
 app.use(cors());
-
-const port = process.env.PORT || 5000;
-
-
 app.use(express.json());
+
+const port =  5000;
 
 const userController = require("./controllers/user.controller");
 
@@ -17,7 +15,7 @@ app.listen(port ,async function (){
 
     try{
         await connect();
-        console.log("listening to port 5000");
+        console.log(`listening to port  ${port}`);
     }
     catch(e){
         console.log(e.message);
