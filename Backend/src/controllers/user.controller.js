@@ -20,7 +20,7 @@ router.post("/login" , async (req,res)=>{
 
         if(!match) return res.status(401).send({message : "Please verify the email id or password"});
 
-        return res.send(user);
+        return res.status(201).send(user);
         
         
     }
@@ -36,7 +36,7 @@ router.post("" ,async (req,res)=>{
 
         let user = await User.findOne({email : req.body.email}).lean().exec();
 
-        if(user) return res.status(400).send({message : "enter another email"});
+        if(user) return res.send("false");
 
         user = await User.create(req.body);
 
