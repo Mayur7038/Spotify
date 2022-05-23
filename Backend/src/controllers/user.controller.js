@@ -12,12 +12,13 @@ router.post("/login" , async (req,res)=>{
     try{  
         const user = await User.findOne({email : req.body.email}).lean().exec(); 
 
-        if(user.password !== req.body.password || !user){
-            res.send(false);           
-        }
-        else{
-            res.send(true);
-        }
+        if(! user ) return res.status(401).send({message : "please enter valid email id"});
+
+        const match = user.checkPassword(req.body.password);
+
+        if(!match) return res.status(401).send({message : "Please verify the email id or password"});
+
+        return res.send(user);
         
         
     }
@@ -54,15 +55,11 @@ router.post("" ,
 
         let user = await User.findOne({email : req.body.email}).lean().exec();
 
-        if(user){
-            res.send("User Already Exists")
-        }
-        else{
+        if(user) return res.status(400).send({message : "enter another email"});
 
-            const user = await User.create(req.body);
-            res.send(true);
-        }
-    
+        user = await User.create(req.body);
+
+        return res.status(201).send(user);
 
     }
     catch(e){
