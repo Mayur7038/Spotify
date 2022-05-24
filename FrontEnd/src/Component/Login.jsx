@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useState } from "react"
-import logo from "../black.png"
+import logo from "../Assets/black.png"
 import { Input } from "../Tags/Input"
-import "./login.css"
+import "./Login.css"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
@@ -31,15 +31,15 @@ export const Login = ()=>{
     const handleSubmit = ()=>{
 
 
-        axios.post("https://spotifymayur.herokuapp.com/user/login" , user).then(({data})=>{ 
+        axios.post("http://localhost:5000/user/login" , user).then(({data})=>{ 
 
 
-            if(data===true){
+            // if(data===true){
                 navigate("/sidebar");
-            }
-            else{
-                setStatus(false)
-            }
+            // }
+            // else{
+            //     setStatus(false)
+            // }
 
             
 
@@ -47,7 +47,7 @@ export const Login = ()=>{
             setStatus(false)
         })
 
-        // navigate("/sidebar")
+        
 
     }
 

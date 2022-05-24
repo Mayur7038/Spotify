@@ -1,8 +1,8 @@
 import "./Home.css"
-import logo from "../spotify-16.png"
-import twit from "../twit.png"
-import insta from "../instagram.png"
-import fac from "../face.png"
+import logo from "../Assets/spotify-16.png"
+import twit from "../Assets/twit.png"
+import insta from "../Assets/instagram.png"
+import fac from "../Assets/face.png"
 import { Link } from "react-router-dom"
 import { Navbar } from "./Navbar"
 export const Home = ()=>{

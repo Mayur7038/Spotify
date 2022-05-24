@@ -1,5 +1,5 @@
 import "./Navbar.css"
-import logo from "../spotify-16.png"
+import logo from "../Assets/Spotify-16.png"
 import { Link } from "react-router-dom"
 
 export const Navbar = ()=>{

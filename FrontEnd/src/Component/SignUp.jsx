@@ -1,4 +1,4 @@
-import logo from "../black.png"
+import logo from "../Assets/black.png"
 import "./SignUp.css"
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
@@ -47,21 +47,28 @@ export const SignUp = ()=>{
 
 
 
-        axios.post("https://spotifymayur.herokuapp.com/user" , user).then(({data})=>{
+        axios.post("http://localhost:5000/user" , user).then(({data})=>{
 
-            if(data === true){
 
-                navigate("/login")
+
+            
+
+            if(data === false ){
+
+                setText("User already Exist")
+                setStatus(false)
             }
             else{
-                setText(data)
-                setStatus(false)
-
+                
+                navigate("/login")
             }
+
+            
 
 
         }).catch((e)=>{
-            setText("Please Fill All the details ");
+            
+            setText("Please fill all the details");
             setStatus(false)
         })
     }

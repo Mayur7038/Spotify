@@ -12,7 +12,7 @@
     grid-template-columns: repeat(4,1fr);
     /* grid-gap: 10px; */
     width: 80vw;
-    color : white;
+    /* color : white; */
 }
 
 #homme{
@@ -25,6 +25,10 @@
 #alllists > div > img{
     height: 200px;
     /* margin-top: 10px; */
+}
+
+#player{
+  width: 100%;
 }
 
 @media only screen and (min-width : 375px) and (max-width:786px ){

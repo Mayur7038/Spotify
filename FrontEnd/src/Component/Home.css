@@ -6,7 +6,7 @@
     /* border : 1px solid red; */
     height: 700px;
     background-repeat: no-repeat;
-    background-image: url("../home.jpg");
+    background-image: url("../Assets/home.jpg");
     background-size: cover;
 }
 #hoome{
